@@ -8,6 +8,10 @@ I am gonna use this multiple times in my projects and I dont want to reinvent th
 
 Project signed under GPLv3 license.
 
+# Installation
+
+`go get -u github.com/marios-pz/jwtverify/pkg`
+
 # How to use it
 
 Example with chi router

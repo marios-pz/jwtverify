@@ -39,7 +39,7 @@ func (*JWTTokenManager) MakeClaim(userID int32, minutes int64) jwt.MapClaims {
 	timeout := time.Duration(minutes)
 	claims := jwt.MapClaims{
 		"user_id": userID,
-		"exp":     time.Now().Add(time.Minute * timeout).Unix(),
+		"expires": time.Now().Add(time.Minute * timeout).Unix(),
 	}
 	return claims
 }

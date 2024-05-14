@@ -23,14 +23,14 @@ package main
 import (
 	"log"
 	"net/http"
-	jv "github.com/marios-pz/jwtverify/pkg"
+	"github.com/marios-pz/jwtverify"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/cors"
 )
 
 func main() {
-	token := jv.NewJWTTokenManager("SECRET_KEY")
+	token := jwtverify.NewJWTTokenManager("SECRET_KEY")
 	r := chi.NewRouter()
     // ... handle chi router
 

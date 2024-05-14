@@ -1,4 +1,4 @@
-package jwtverify_test
+package jwtverify
 
 import (
 	"net/http"
@@ -6,11 +6,10 @@ import (
 	"testing"
 
 	"github.com/golang-jwt/jwt"
-	jv "github.com/marios-pz/jwtverify/pkg"
 )
 
 func TestGenerateToken(t *testing.T) {
-	tm := jv.NewJWTTokenManager("secret")
+	tm := NewJWTTokenManager("secret")
 	claims := tm.MakeClaim(123, 60)
 	_, err := tm.GenerateToken(claims)
 	if err != nil {
@@ -19,7 +18,7 @@ func TestGenerateToken(t *testing.T) {
 }
 
 func TestVerifyToken(t *testing.T) {
-	tm := jv.NewJWTTokenManager("secret")
+	tm := NewJWTTokenManager("secret")
 	claims := tm.MakeClaim(123, 60)
 	token, err := tm.GenerateToken(claims)
 	if err != nil {
@@ -52,7 +51,7 @@ func TestJWTHandler(t *testing.T) {
 		w.WriteHeader(http.StatusOK)
 	})
 
-	tm := jv.NewJWTTokenManager("secret")
+	tm := NewJWTTokenManager("secret")
 	handler := tm.JWTHandler(dummyHandler)
 
 	// Create a mock HTTP request with no Authorization header

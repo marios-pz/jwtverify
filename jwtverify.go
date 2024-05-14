@@ -2,7 +2,7 @@
 Package jwtverify provides utilities for working with JSON Web Tokens (JWT) in Go.
 A helper package for JWT operations.
 */
-package pkg
+package jwtverify
 
 import (
 	"errors"

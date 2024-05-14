@@ -10,7 +10,7 @@ Project signed under GPLv3 license.
 
 # Installation
 
-`go get -u github.com/marios-pz/jwtverify/pkg`
+`go get -u github.com/marios-pz/jwtverify`
 
 # How to use it
 
